@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int minTime(vector<int> P) {
+	sort(P.begin(), P.end());
+	int sum = 0;
+	for (int i = 0; i < P.size(); i++) {
+		int midSum = 0;
+		for (int j = 0; j <= i; j++)
+			midSum += P[j];
+		sum += midSum;
+	}
+
+	return sum;
+}
+
+int main() {
+	int n; cin >> n;
+	vector<int> P;
+	for (int i = 0; i < n; i++) {
+		int a; cin >> a;
+		P.push_back(a);
+	}
+
+	cout << minTime(P) << endl;
+}
