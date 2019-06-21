@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int cntCoin(vector<int> A, int K) {
+	int price = K, cnt = 0;
+	for (int i = A.size() - 1; i >= 0; i--) {
+		if (A[i] <= price) {
+			int tmp = price / A[i];
+			cnt += tmp;
+			price -= (A[i] * tmp);
+		}
+
+		if (price == 0) break;
+	}
+
+	return cnt;
+}
+
+int main() {
+	int N, K; cin >> N >> K;
+	vector<int> A;
+	for (int i = 0; i < N; i++) {
+		int a; cin >> a;
+		A.push_back(a);
+	}
+
+	cout << cntCoin(A, K) << endl;
+}
