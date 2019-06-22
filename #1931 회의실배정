@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+class Time {
+public:
+	int start, end;
+
+	Time() { start = end = 0; }
+	Time(int a, int b) {
+		start = a;
+		end = b;
+	}
+	bool operator < (Time t) {
+		if (end == t.end) return start < t.start;
+		else return end < t.end;
+	}
+};
+
+int main() {
+	int N; cin >> N;
+	vector<Time> conference;
+	for (int i = 0; i < N; i++) {
+		int a, b;
+		cin >> a >> b;
+		conference.push_back(Time(a, b));
+	}
+	sort(conference.begin(), conference.end());
+
+	int finish = 0, cnt = 0;
+	for (int i = 0; i < conference.size(); i++) {
+		if (conference[i].start >= finish) {
+			finish = conference[i].end;
+			cnt++;
+		}
+	}
+
+	cout << cnt << endl;
+}
