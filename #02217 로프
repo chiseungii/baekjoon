@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+	int N; cin >> N;
+	vector<int> ropes;
+	for (int i = 0; i < N; i++) {
+		int a; cin >> a;
+		ropes.push_back(a);
+	}
+	sort(ropes.begin(), ropes.end());
+
+	int max = 0, rope = ropes.size();
+	for (int i = 0; i < ropes.size(); i++, rope--) {
+		if (ropes[i] * rope > max)
+			max = ropes[i] * rope;
+	}
+	cout << max << endl;
+}
