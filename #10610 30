@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+string thirty(string s) {
+	string tmp = s;
+	sort(tmp.begin(), tmp.end(), greater<char>());
+
+	if (tmp[tmp.length() - 1] != '0') return "-1";
+	else {
+		int sum = 0;
+		for (int i = 0; i < tmp.length() - 1; i++)
+			sum += (tmp[i] - '0');
+
+		if (sum % 3 != 0) return "-1";
+		else return tmp;
+	}
+}
+
+int main() {
+	string N; cin >> N;
+	cout << thirty(N) << endl;
+}
