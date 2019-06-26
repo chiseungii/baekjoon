@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int toInt(string s) {
+	int result = 0;
+	for (int i = 0; i < s.length(); i++) {
+		result = result * 10 + (s[i] - '0');
+	}
+
+	return result;
+}
+
+int main() {
+	string expression;
+	cin >> expression;
+
+	vector<char> op;
+	vector<int> num;
+	int index = 0;
+	while (index < expression.length()) {
+		int before = index;
+		while (isdigit(expression[index])) index++;
+		string tmp = expression.substr(before, index - before);
+		num.push_back(toInt(tmp));
+
+		if (index < expression.length())
+			op.push_back(expression[index++]);
+	}
+
+	vector<int> minus;
+	for (int i = 0; i < op.size(); i++) {
+		if (op[i] == '+')
+			num[i + 1] += num[i];
+		else
+			minus.push_back(num[i]);
+	}
+	minus.push_back(num[num.size() - 1]);
+
+	int result = minus[0];
+	for (int i = 1; i < minus.size(); i++)
+		result -= minus[i];
+
+	cout << result << endl;
+}
