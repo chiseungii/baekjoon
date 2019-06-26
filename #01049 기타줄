@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N, M; cin >> N >> M;
+	int minSet = 1000, minOne = 1000;
+	for (int i = 0; i < M; i++) {
+		int a, b; cin >> a >> b;
+		if (a < minSet) minSet = a;
+		if (b < minOne) minOne = b;
+	}
+
+	int result;
+	if (minSet < minOne * 6) {
+		result = (N / 6)*minSet;
+
+		int tmp = N % 6;
+		if (minSet < tmp*minOne)
+			result += minSet;
+		else
+			result += (tmp*minOne);
+	}
+	else
+		result = N * minOne;
+
+	cout << result << endl;
+}
