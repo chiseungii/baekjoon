@@ -1,0 +1,49 @@
+// C++
+ #include <iostream>
+ using namespace std;
+ 
+ int main(){
+ 	bool mod[42] = {0, };
+ 	int cnt = 0;
+ 	
+ 	for(int i=0; i<10; i++){
+ 		int a; cin >> a;
+ 		int tmp = a % 42;
+ 		
+ 		if(!mod[tmp]){
+ 			cnt++;
+ 			mod[tmp] = 1;
+		}
+	}
+	
+	cout << cnt << endl;
+ }
+ 
+ 
+ 
+ 
+ // Java
+ import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		boolean mod[] = new boolean[42];
+		int cnt = 0;
+		
+		for(int i=0; i<42; i++) mod[i] = false;
+		
+		for(int i=0; i<10; i++) {
+			int a = scan.nextInt();
+			int tmp = a % 42;
+			
+			if(!mod[tmp]) {
+				cnt++;
+				mod[tmp] = true;
+			}
+		}
+		
+		System.out.println(cnt);
+	}	
+}
