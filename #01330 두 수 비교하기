@@ -1,0 +1,35 @@
+// C++
+ #include <iostream>
+ using namespace std;
+ 
+ int main(){
+ 	int A, B;
+ 	cin >> A >> B;
+ 	
+ 	if(A > B){
+ 		cout << ">\n";
+	}
+	else if(A < B){
+		cout << "<\n";
+	}
+	else cout << "==\n";
+ }
+ 
+ 
+ 
+ 
+ // Java
+ import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int A = scan.nextInt();
+		int B = scan.nextInt();
+		
+		if(A > B) System.out.println('>');
+		else if(A < B) System.out.println('<');
+		else System.out.println("==");
+	}	
+}
