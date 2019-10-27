@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string s; cin >> s;
+	int cnt = 0;
+
+	for (int i = 0; i < s.length(); i++) {
+		switch (s[i]) {
+		case 'c':
+			if (s[i + 1] == '=' || s[i + 1] == '-') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		case 'd':
+			if (s[i + 1] == 'z' && s[i + 2] == '=') {
+				cnt++;
+				i += 2;
+			}
+			else if (s[i + 1] == '-') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		case 'l':
+			if (s[i + 1] == 'j') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		case 'n':
+			if (s[i + 1] == 'j') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		case 's':
+			if (s[i + 1] == '=') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		case 'z':
+			if (s[i + 1] == '=') {
+				cnt++;
+				i++;
+			}
+			else cnt++;
+			break;
+		default:
+			cnt++;
+			break;
+		}
+	}
+
+	cout << cnt << '\n';
+}
