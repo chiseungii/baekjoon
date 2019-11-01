@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class People {
+public:
+	int weight;
+	int height;
+	int rank;
+};
+
+People p[50];
+
+void calRank(int n) {
+	for (int i = 0; i < n; i++) {
+		int cnt = 1;
+		for (int j = 0; j < n; j++)
+			if (p[j].weight > p[i].weight && p[j].height > p[i].height)
+				cnt++;
+		p[i].rank = cnt;
+	}
+}
+
+int main() {
+	int n; cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> p[i].weight >> p[i].height;
+
+	calRank(n);
+
+	for (int i = 0; i < n; i++)
+		cout << p[i].rank << ' ';
+	cout << endl;
+}
