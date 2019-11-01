@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+bool board[50][50];
+
+int repaint(int startI, int startJ) {
+	int min = 100; bool check = false;
+	for (int c = 0; c < 2; c++) {
+		int cnt = 0;
+		for (int i = startI; i < startI + 8; i++) {
+			for (int j = startJ; j < startJ + 8; j++) {
+				if (board[i][j] != check) cnt++;
+				check = !check;
+			}
+			check = !check;
+		}
+		if (cnt < min) min = cnt;
+		check = true;
+	}
+	return min;
+}
+
+int main() {
+	int n, m; cin >> n >> m;
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++) {
+			char c; cin >> c;
+			if (c == 'W') board[i][j] = false;
+			else board[i][j] = true;
+		}
+
+	int minCnt = n * m, temp;
+	for (int i = 0; i <= n - 8; i++)
+		for (int j = 0; j <= m - 8; j++)
+			if ((temp = repaint(i, j)) < minCnt)
+				minCnt = temp;
+
+	cout << minCnt << endl;
+}
