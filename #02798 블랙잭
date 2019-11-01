@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int cards[101];
+
+int maxSum(int n, int m) {
+	int max = 0;
+	for (int i = 1; i <= n-2; i++) {
+		int sum = cards[i];
+		for (int j = i + 1; j <= n - 1; j++) {
+			sum += cards[j];
+			for (int k = j + 1; k <= n; k++) {
+				int sum2 = sum + cards[k];
+				if (sum2 > max && sum2 <= m) max = sum2;
+			}
+			sum -= cards[j];
+		}
+	}
+
+	return max;
+}
+
+int main() {
+	int n, m; cin >> n >> m;
+	for (int i = 0; i < n; i++) cin >> cards[i + 1];
+
+	cout << maxSum(n, m) << endl;
+}
