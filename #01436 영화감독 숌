@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isFinal(int n) {
+	int copy = n;
+	while (copy) {
+		if (copy % 1000 == 666) return true;
+		copy /= 10;
+	}
+	return false;
+}
+
+int main() {
+	int n; cin >> n;
+	int cnt = 1, num = 666;
+
+	while (n != cnt)
+		if (isFinal(++num))
+			cnt++;
+
+	cout << num << endl;
+}
