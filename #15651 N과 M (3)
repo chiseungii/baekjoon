@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int col[7];
+int n;
+
+void backtracking(int i, int m) {
+	if (i == m) {
+		for (int j = 0; j < i; j++)
+			cout << col[j] << ' ';
+		cout << '\n';
+		return;
+	}
+	else {
+		for (int j = 1; j <= n; j++) {
+			col[i] = j;
+			backtracking(i + 1, m);
+		}
+	}
+}
+
+int main() {
+	int m; cin >> n >> m;
+	backtracking(0, m);
+}
