@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int board[14];
+int cnt = 0;
+
+bool isPromising(int i) {
+	for (int j = 0; j < i - 1; j++)
+		if (board[j] == board[i - 1] || abs(board[j] - board[i - 1]) == abs(i - 1 - j))
+			return false;
+	return true;
+}
+
+void backtracking(int i, int n) {
+	if (isPromising(i)) {
+		if (i == n) {
+			cnt++;
+			return;
+		}
+		else {
+			for (int j = 1; j <= n; j++) {
+				board[i] = j;
+				backtracking(i + 1, n);
+			}
+		}
+	}
+}
+
+int main() {
+	int n; cin >> n;
+	backtracking(0, n);
+	cout << cnt << endl;
+}
