@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int sudoku[9][9];
+int zero[81][2];
+int pointer = 0;
+
+bool isPromising(int i, int j, int num) {
+	if (j == -1) return true;
+
+	for (int n = 0; n < 9; n++)
+		if (sudoku[n][j] == num && n != i)
+			return false;
+
+	for (int n = 0; n < 9; n++)
+		if (sudoku[i][n] == num && j != n)
+			return false;
+
+	int groupI = i / 3;
+	int groupJ = j / 3;
+	for (int n = groupI * 3; n < groupI * 3 + 3; n++)
+		for (int m = groupJ * 3; m < groupJ * 3 + 3; m++)
+			if (sudoku[n][m] == num) {
+				if (n == i && m == j) continue;
+				else return false;
+			}
+
+	return true;
+}
+
+void backtracking(int i, int j, int num, int ptr) {
+	if (i == zero[pointer][0] && j == zero[pointer][1]) {
+		for (int n = 0; n < 9; n++) {
+			for (int m = 0; m < 9; m++)
+				cout << sudoku[n][m] << ' ';
+			cout << '\n';
+		}
+		exit(0);
+	}
+	else {
+		int nextI = zero[ptr][0];
+		int nextJ = zero[ptr][1];
+		for (int n = 1; n <= 9; n++) {
+			if (isPromising(nextI, nextJ, n)) {
+				sudoku[nextI][nextJ] = n;
+				backtracking(nextI, nextJ, n, ptr + 1);
+				sudoku[nextI][nextJ] = 0;
+			}
+		}
+	}
+}
+
+int main() {
+	for (int i = 0; i < 9; i++)
+		for (int j = 0; j < 9; j++) {
+			cin >> sudoku[i][j];
+			
+			if (sudoku[i][j] == 0) {
+				zero[pointer][0] = i;
+				zero[pointer++][1] = j;
+			}
+		}
+	pointer--;
+
+	backtracking(0, -1, 0, 0);
+}
