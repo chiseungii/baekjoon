@@ -1,0 +1,32 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int N;
+int cards[1001][1001];
+int cost[1001];
+
+void DP() {
+	for (int i = 1; i <= N; i++) {
+		cards[1][i] = cost[1] * i;
+		cards[i][0] = 0;
+	}
+
+	for (int i = 2; i <= N; i++) {
+		for (int j = 1; j <= N; j++) {
+			if (j < i)
+				cards[i][j] = cards[i - 1][j];
+			else
+				cards[i][j] = max(cards[i - 1][j], cards[i][j - i] + cost[i]);
+		}
+	}
+}
+
+int main() {
+	cin >> N;
+	for (int i = 1; i <= N; i++)
+		cin >> cost[i];
+
+	DP();
+	cout << cards[N][N] << endl;
+}
