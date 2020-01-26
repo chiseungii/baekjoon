@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int N;
+int A[1001];
+int DP[1001];
+
+void dinamic() {
+	for (int i = 1; i <= N; i++)
+		DP[i] = 1;
+
+	for (int i = 2; i <= N; i++) {
+		for (int j = i - 1; j >= 1; j--) {
+			if (A[j] > A[i]) {
+				DP[i] = max(DP[i], DP[j] + 1);
+			}
+		}
+	}
+}
+
+int main() {
+	cin >> N;
+	for (int i = 1; i <= N; i++)
+		cin >> A[i];
+
+	dinamic();
+	int max = DP[1];
+	for (int i = 2; i <= N; i++)
+		if (DP[i] > max) max = DP[i];
+
+	cout << max << endl;
+}
