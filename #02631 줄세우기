@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int N;
+int children[201];
+int LIS[201];
+
+int DP() {
+	LIS[1] = 1;
+	for (int i = 2; i <= N; i++) {
+		int max = 1;
+		for (int j = i - 1; j >= 1; j--)
+			if (children[j] < children[i] && LIS[j] + 1>max)
+				max = LIS[j] + 1;
+		LIS[i] = max;
+	}
+
+	int max = LIS[1];
+	for (int i = 2; i <= N; i++)
+		if (LIS[i] > max)
+			max = LIS[i];
+
+	return N - max;
+}
+
+int main() {
+	cin >> N;
+	for (int i = 1; i <= N; i++)
+		cin >> children[i];
+	cout << DP() << endl;
+}
