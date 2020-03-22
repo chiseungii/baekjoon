@@ -1,0 +1,18 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n; cin >> hex >> n;
+	cout << n << endl;
+}
+
+
+
+
+// Python
+
+n = input()
+n = int(n, base=16)
+print(n)
