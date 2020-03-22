@@ -1,3 +1,5 @@
+// C++
+
 #include <iostream>
 using namespace std;
 
@@ -6,3 +8,11 @@ int main() {
 	cin >> A >> B;
 	cout << A - B << endl;
 }
+
+
+
+
+// Python
+
+A, B = input().split()
+print(int(A) - int(B))
