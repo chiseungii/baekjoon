@@ -1,0 +1,19 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << ".  .   .\n";
+	cout << "|  | _ | _. _ ._ _  _\n";
+	cout << "|/\\|(/.|(_.(_)[ | )(/.\n";
+}
+
+
+
+
+// Python
+
+print(".  .   .")
+print("|  | _ | _. _ ._ _  _")
+print("|/\\|(/.|(_.(_)[ | )(/.")
