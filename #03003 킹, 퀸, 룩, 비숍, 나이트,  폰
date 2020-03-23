@@ -1,0 +1,24 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int horses[6] = { 1,1,2,2,2,8 };
+	for (int i = 0; i < 6; i++) {
+		int n; cin >> n;
+		cout << horses[i] - n << ' ';
+	}
+	cout << endl;
+}
+
+
+
+
+// Python
+
+horses = [1, 1, 2, 2, 2, 8]
+n = list(map(int, input().split()))
+
+for i in range(6):
+    print(horses[i] - n[i], end=' ')
