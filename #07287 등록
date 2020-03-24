@@ -1,0 +1,17 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << 232 << endl;
+	cout << "chiseungii\n";
+}
+
+
+
+
+// Python
+
+print(232)
+print("chiseungii")
