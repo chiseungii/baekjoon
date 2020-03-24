@@ -1,0 +1,23 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B, C; cin >> A >> B >> C;
+	cout << (A + B) % C << endl;
+	cout << ((A % C) + (B % C)) % C << endl;
+	cout << (A * B) % C << endl;
+	cout << ((A % C) * (B % C)) % C << endl;
+}
+
+
+
+
+// Python
+
+A, B, C = map(int, input().split())
+print((A + B) % C)
+print(((A % C) + (B % C)) % C)
+print((A * B) % C)
+print(((A % C) * (B % C)) % C)
