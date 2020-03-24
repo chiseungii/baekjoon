@@ -1,0 +1,19 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B; cin >> A >> B;
+	A = B - A;
+	cout << A << ' ' << B << endl;
+}
+
+
+
+
+// Python
+
+A, B = map(int, input().split())
+A = B - A
+print(A, B, sep=' ')
