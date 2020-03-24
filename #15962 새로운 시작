@@ -1,0 +1,15 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout << "파이팅!!\n";
+}
+
+
+
+
+// Python
+
+print("파이팅!!")
