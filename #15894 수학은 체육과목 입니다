@@ -1,0 +1,17 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long n; cin >> n;
+	cout << n * 4 << endl;
+}
+
+
+
+
+// Python
+
+n = int(input())
+print(n * 4)
