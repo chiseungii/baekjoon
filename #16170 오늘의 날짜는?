@@ -1,0 +1,15 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout<<"2020\n03\n24\n";
+}
+
+
+
+
+// Python
+
+print("2020", "03", "24", sep='\n')
