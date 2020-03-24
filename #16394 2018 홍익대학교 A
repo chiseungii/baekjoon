@@ -1,4 +1,7 @@
-// 홍익대학교 
+// 홍익대학교
+
+// C++
+
 #include <iostream>
 using namespace std;
 
@@ -6,3 +9,11 @@ int main(){
 	int n; cin >> n;
 	cout << n - 1946 << endl;
 }
+
+
+
+
+// Python
+
+N = int(input())
+print(N - 1946)
