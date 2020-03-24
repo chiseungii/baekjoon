@@ -1,0 +1,17 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long A, B; cin >> A >> B;
+	cout << A * A - B * B << endl;
+}
+
+
+
+
+// Python
+
+A, B = map(int, input().split())
+print(A * A - B * B)
