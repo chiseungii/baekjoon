@@ -1,0 +1,20 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N, M, K; cin >> N >> M >> K;
+
+	cout << K / M << ' ';
+	cout << K % M << endl;
+}
+
+
+
+
+// Python
+
+N, M, K = map(int, input().split())
+print(K // M, end=' ')
+print(K % M)
