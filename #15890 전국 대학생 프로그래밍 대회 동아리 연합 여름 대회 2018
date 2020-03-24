@@ -1,0 +1,15 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    cout << "20180729\n";
+}
+
+
+
+
+// Python
+
+print("20180729")
