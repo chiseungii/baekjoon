@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int L; cin >> L;
+
+	if (!(L % 5))
+		cout << L / 5 << endl;
+	else
+		cout << L / 5 + 1 << endl;
+}
+
+
+
+
+// Python
+
+L = int(input())
+
+if L % 5 == 0:
+    print(L // 5)
+else:
+    print(L // 5 + 1)
