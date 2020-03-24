@@ -1,0 +1,19 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	string s; cin >> s;
+	s += "??!";
+	cout << s << endl;
+}
+
+
+
+
+// Python
+
+s = input()
+s += "??!"
+print(s)
