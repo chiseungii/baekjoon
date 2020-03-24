@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B; cin >> A >> B;
+	cout << A + B << endl;
+	cout << A - B << endl;
+	cout << A * B << endl;
+	cout << A / B << endl;
+	cout << A % B << endl;
+}
+
+
+
+
+// Python
+
+A, B = map(int, input().split())
+print(A + B)
+print(A - B)
+print(A * B)
+print(A // B)
+print(A % B)
