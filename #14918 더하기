@@ -1,0 +1,17 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b; cin >> a >> b;
+	cout << a + b << endl;
+}
+
+
+
+
+// Python
+
+a, b = map(int, input().split())
+print(a + b)
