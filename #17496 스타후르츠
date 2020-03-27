@@ -1,0 +1,19 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N, T, C, P; cin >> N >> T >> C >> P;
+	int starfruits = ((N - 1) / T) * C;
+	cout << starfruits * P << endl;
+}
+
+
+
+
+// Python
+
+N, T, C, P = map(int, input().split())
+starfruits = ((N - 1) // T) * C
+print(starfruits * P)
