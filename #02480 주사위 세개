@@ -1,0 +1,46 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b, c; cin >> a >> b >> c;
+	int cost;
+
+	if (a == b && a == c)
+		cost = 10000 + a * 1000;
+	else if (a == b && a != c)
+		cost = 1000 + a * 100;
+	else if (a == c && a != b)
+		cost = 1000 + a * 100;
+	else if (b == c && a != b)
+		cost = 1000 + b * 100;
+	else {
+		int max = a;
+		if (b > max) max = b;
+		if (c > max) max = c;
+		cost = max * 100;
+	}
+
+	cout << cost << endl;
+}
+
+
+
+
+// Python
+
+a, b, c = map(int, input().split())
+
+if (a == b) & (a == c):
+    cost = 10000 + a*1000
+elif (a == b) & (a != c):
+    cost = 1000 + a*100
+elif (a == c) & (a != b):
+    cost = 1000 + a*100
+elif (b == c) & (a != b):
+    cost = 1000 + b*100
+else:
+    cost = max(a, b, c) * 100
+
+print(cost)
