@@ -33,3 +33,17 @@ public class Main {
 		else System.out.println("==");
 	}	
 }
+
+
+
+
+// Python
+
+A, B = map(int, input().split())
+
+if A > B:
+    print('>')
+elif A < B:
+    print('<')
+else:
+    print('==')
