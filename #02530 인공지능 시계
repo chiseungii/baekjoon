@@ -1,0 +1,62 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B, C, D; cin >> A >> B >> C >> D;
+
+	int res_hour = A, res_min, res_sec;
+	int tmp_sec = 60 - C;
+	if (D < tmp_sec) {
+		res_min = B;
+		res_sec = C + D;
+	}
+	else if (D == tmp_sec) {
+		res_min = B + 1;
+		res_sec = 0;
+	}
+	else {
+		res_min = B + 1, res_sec = 0;
+		D -= tmp_sec;
+		res_min += (D / 60);
+		res_sec += (D % 60);
+	}
+	if (res_min >= 60) {
+		res_hour = A + res_min / 60;
+		res_min %= 60;
+	}
+	if (res_hour >= 24) res_hour %= 24;
+
+	cout << res_hour << ' ' << res_min << ' ' << res_sec << endl;
+}
+
+
+
+
+// Python
+
+A, B, C = map(int, input().split())
+D = int(input())
+
+res_hour = A
+tmp_sec = 60 - C
+if D < tmp_sec:
+    res_min = B
+    res_sec = C + D
+elif D == tmp_sec:
+    res_min = B + 1
+    res_sec = 0
+else:
+    res_min = B + 1
+    res_sec = 0
+    D -= tmp_sec
+    res_min += (D // 60)
+    res_sec += (D % 60)
+if res_min >= 60:
+    res_hour = A + (res_min // 60)
+    res_min %= 60
+if res_hour >= 24:
+    res_hour = res_hour % 24
+
+print(res_hour, res_min, res_sec, sep=' ')
