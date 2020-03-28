@@ -1,0 +1,58 @@
+// C++
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string binary[8] = { "000", "001", "010", "011","100","101","110","111" };
+	string s; cin >> s;
+	int tmp;
+
+	tmp = s[0] - '0';
+	string result;
+	switch (tmp) {
+	case 0:
+		result = "";
+		break;
+	case 1:
+		result = "1";
+		break;
+	case 2:
+		result = "10";
+		break;
+	case 3:
+		result = "11";
+		break;
+	case 4:
+		result = "100";
+		break;
+	case 5:
+		result = "101";
+		break;
+	case 6:
+		result = "110";
+		break;
+	case 7:
+		result = "111";
+	}
+	for (int i = 1; i < s.length(); i++) {
+		tmp = s[i] - '0';
+		result += binary[tmp];
+	}
+	if (result == "") result = "0";
+
+	cout << result << endl;
+}
+
+
+
+
+// Python
+
+n = input()
+s = '0o' + n
+s = int(s, base=8)
+result = '{:#b}'.format(s)
+result = result[2:]
+print(result)
