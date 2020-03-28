@@ -1,0 +1,24 @@
+// C++
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	double a, b, c; cin >> a >> b >> c;
+	
+	double x = sqrt((a * a) / (b * b + c * c));
+	
+	cout << (int)(b * x) << ' ' << (int)(c * x) << endl;
+}
+
+
+
+
+// Python
+
+import math
+
+a, b, c = map(int, input().split())
+x = math.sqrt((a ** 2) / (b ** 2 + c ** 2))
+print(int(b * x), int(c * x), sep=' ')
