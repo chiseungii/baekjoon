@@ -1,0 +1,30 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B, C; cin >> A >> B >> C;
+
+	if (B == C) {
+		cout << -1 << endl;
+		return 0;
+	}
+
+	int x = A / (C - B);
+	if (x < 0) cout << -1 << endl;
+	else cout << x + 1 << endl;
+}
+
+
+
+
+// Python
+
+A, B, C = map(int, input().split())
+
+if C > B:
+    x = A // (C - B)
+    print(x + 1)
+else:
+    print(-1)
