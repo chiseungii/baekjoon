@@ -1,0 +1,36 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a1, d, t;
+
+	while (1) {
+		cin >> a1 >> d >> t;
+		if (a1 == 0 && d == 0 && t == 0)
+			break;
+
+		int dis = t - a1;
+		if ((dis % d != 0) || (dis / d < 0))
+			cout << 'X' << endl;
+		else
+			cout << dis / d + 1 << endl;
+	}
+}
+
+
+
+
+// Python
+
+while True:
+    a1, d, t = map(int, input().split())
+    if (a1, d, t) == (0, 0, 0):
+        break
+
+    dis = t - a1
+    if (dis % d != 0) or (dis // d < 0):
+        print('X')
+    else:
+        print(dis // d + 1)
