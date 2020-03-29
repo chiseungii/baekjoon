@@ -1,0 +1,33 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N; cin >> N;
+	int height, width;
+
+	if (N % 2 == 0)
+		height = width = (N / 2) + 1;
+	else {
+		height = (N + 1) / 2 + 1;
+		width = height - 1;
+	}
+
+	cout << height * width << endl;
+}
+
+
+
+
+// Python
+
+N = int(input())
+
+if N%2 == 0:
+    height = width = N//2 + 1
+else:
+    height = (N + 1)//2 + 1
+    width = height - 1
+
+print(height * width)
