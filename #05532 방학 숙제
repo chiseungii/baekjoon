@@ -1,0 +1,31 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int L, A, B, C, D; cin >> L >> A >> B >> C >> D;
+
+	int korean = (A % C) ? A / C + 1 : A / C;
+	int math = (B % D) ? B / D + 1 : B / D;
+	int rest = (korean > math) ? L - korean : L - math;
+	
+	cout << rest << endl;
+}
+
+
+
+
+// Python
+
+L = int(input())
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+
+korean = A // C + 1 if A % C else A // C
+math = B // D + 1 if B % D else B // D
+rest = L - korean if korean > math else L - math
+
+print(rest)
