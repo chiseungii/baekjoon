@@ -1,0 +1,76 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+void print_time(int D, int H, int M) {
+	int dis_day, dis_hour, dis_min;
+
+	if (M < 11) {
+		H--;
+		M += 60;
+	}
+	dis_min = M - 11;
+	if (H < 11) {
+		D--;
+		H += 24;
+	}
+	dis_hour = H - 11;
+	dis_day = D - 11;
+	
+	int res_min = dis_min + dis_hour * 60 + dis_day * 24 * 60;
+
+	cout << res_min << endl;
+}
+
+int main() {
+	int D, H, M; cin >> D >> H >> M;
+
+	if (D < 11) cout << -1 << endl;
+	else if (D == 11) {
+		if (H < 11) cout << -1 << endl;
+		else if (H == 11) {
+			if (M < 11) cout << -1 << endl;
+			else print_time(D, H, M);
+		}
+		else print_time(D, H, M);
+	}
+	else print_time(D, H, M);
+}
+
+
+
+
+// Python
+
+def print_time(D, H, M):
+    if M < 11:
+        H -= 1
+        M += 60
+    dis_min = M - 11
+    if H < 11:
+        D -= 1
+        H += 24
+    dis_hour = H - 11
+    dis_day = D - 11
+
+    res_min = dis_min + dis_hour*60 + dis_day*24*60
+
+    print(res_min)
+
+D, H, M = map(int, input().split())
+
+if D < 11:
+    print(-1)
+elif D == 11:
+    if H < 11:
+        print(-1)
+    elif H == 11:
+        if M < 11:
+            print(-1)
+        else:
+            print_time(D, H, M)
+    else:
+        print_time(D, H, M)
+else:
+    print_time(D, H, M)
