@@ -1,0 +1,6 @@
+// Python
+
+N = input()
+N = '0b' + N
+N = int(N, base=2)
+print('{:#b}'.format(N * 17)[2:])
