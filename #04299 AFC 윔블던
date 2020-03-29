@@ -1,0 +1,34 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int s, d; cin >> s >> d;
+
+	if ((s + d) % 2 != 0)
+		cout << -1 << endl;
+	else if ((s - d) % 2 != 0 || (s - d) < 0)
+		cout << -1 << endl;
+	else {
+		int a = (s + d) / 2;
+		int b = (s - d) / 2;
+		cout << a << ' ' << b << endl;
+	}
+}
+
+
+
+
+// Python
+
+s, d = map(int, input().split())
+
+if (s + d) % 2 != 0:
+    print(-1)
+elif ((s - d) % 2 != 0) | s < d:
+    print(-1)
+else:
+    a = (s + d) // 2
+    b = (s - d) // 2
+    print(a, b, sep=' ')
