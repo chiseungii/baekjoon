@@ -1,0 +1,79 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+	int start_hour, start_min, start_sec;
+	int end_hour, end_min, end_sec;
+
+public:
+	Employee(int sh, int sm, int ss, int eh, int em, int es) {
+		start_hour = sh;
+		start_min = sm;
+		start_sec = ss;
+		end_hour = eh;
+		end_min = em;
+		end_sec = es;
+	}
+	void print_time() {
+		if (end_sec < start_sec) {
+			end_min--;
+			end_sec += 60;
+		}
+		int res_sec = end_sec - start_sec;
+
+		if (end_min < start_min) {
+			end_hour--;
+			end_min += 60;
+		}
+		int res_min = end_min - start_min;
+
+		int res_hour = end_hour - start_hour;
+
+		cout << res_hour << ' ' << res_min << ' ' << res_sec << endl;
+	}
+};
+
+int main() {
+	for (int i = 0; i < 3; i++) {
+		int sh, sm, ss, eh, em, es;
+		cin >> sh >> sm >> ss >> eh >> em >> es;
+		Employee e(sh, sm, ss, eh, em, es);
+		e.print_time();
+	}
+}
+
+
+
+
+// Python
+
+class Employee:
+    def __init__(self, sh, sm, ss, eh, em, es):
+        self.start_hour = sh
+        self.start_min = sm
+        self.start_sec = ss
+        self.end_hour = eh
+        self.end_min = em
+        self.end_sec = es
+
+    def print_time(self):
+        if self.end_sec < self.start_sec:
+            self.end_min -= 1
+            self.end_sec += 60
+        res_sec = self.end_sec - self.start_sec
+
+        if self.end_min < self.start_min:
+            self.end_hour -= 1
+            self.end_min += 60
+        res_min = self.end_min - self.start_min
+
+        res_hour = self.end_hour - self.start_hour
+
+        print(res_hour, res_min, res_sec, sep=' ')
+
+for i in range(3):
+    sh, sm, ss, eh, em, es = map(int, input().split())
+    e = Employee(sh, sm, ss, eh, em, es)
+    e.print_time()
