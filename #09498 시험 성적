@@ -1,0 +1,32 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n; cin >> n;
+
+	if (n >= 90) cout << 'A' << endl;
+	else if (n >= 80) cout << 'B' << endl;
+	else if (n >= 70) cout << 'C' << endl;
+	else if (n >= 60) cout << 'D' << endl;
+	else cout << 'F' << endl;
+}
+
+
+
+
+// Python
+
+n = int(input())
+
+if n >= 90:
+    print('A')
+elif n >= 80:
+    print('B')
+elif n >= 70:
+    print('C')
+elif n>= 60:
+    print('D')
+else:
+    print('F')
