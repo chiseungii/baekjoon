@@ -1,0 +1,34 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int m1 = 0;
+	for (int i = 0; i < 4; i++) {
+		int a; cin >> a;
+		m1 += a;
+	}
+	int m2 = 0;
+	for (int i = 0; i < 4; i++) {
+		int a; cin >> a;
+		m2 += a;
+	}
+
+	if (m1 < m2)
+		cout << m2 << endl;
+	else
+		cout << m1 << endl;
+}
+
+
+
+
+// Python
+
+m1 = list(map(int, input().split()))
+sum_m1 = sum(m1)
+m2 = list(map(int, input().split()))
+sum_m2 = sum(m2)
+
+print(max(sum_m1, sum_m2))
