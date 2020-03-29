@@ -1,0 +1,38 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int D; cin >> D;
+
+	switch (D) {
+	case 1:
+		cout << 1 << endl;
+		break;
+	case 2:
+		cout << 7 << endl;
+		break;
+	case 3:
+		cout << 2 << endl;
+		break;
+	case 4:
+		cout << 3 << endl;
+	}
+}
+
+
+
+
+// Python
+
+D = int(input())
+
+if D == 1:
+    print(1)
+elif D == 2:
+    print(7)
+elif D == 3:
+    print(2)
+else:
+    print(3)
