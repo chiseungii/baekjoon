@@ -1,0 +1,44 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n1, n2, n3; cin >> n1 >> n2 >> n3;
+	int r1, r2, r3;
+
+	int min = n1, max = n1;
+	if (n2 > max) max = n2;
+	if (n2 < min) min = n2;
+	if (n3 > max) max = n3;
+	if (n3 < min) min = n3;
+	r1 = min; r3 = max;
+
+	if ((n1 != r1) && (n1 != r3))
+		r2 = n1;
+	else if ((n2 != r1) && (n2 != r3))
+		r2 = n2;
+	else
+		r2 = n3;
+
+	cout << r1 << ' ' << r2 << ' ' << r3 << endl;
+}
+
+
+
+
+// Python
+
+n1, n2, n3 = map(int, input().split())
+
+r1 = min(n1, n2, n3)
+r3 = max(n1, n2, n3)
+
+if (n1 != r1) & (n1 != r3):
+    r2 = n1
+elif (n2 != r1) & (n2 != r3):
+    r2 = n2
+else:
+    r2 = n3
+
+print(r1, r2, r3, sep=' ')
