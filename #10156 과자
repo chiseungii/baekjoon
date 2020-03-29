@@ -1,0 +1,28 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int K, N, M; cin >> K >> N >> M;
+
+	int cost = K * N;
+	int mom = cost - M;
+	if (mom < 0) mom = 0;
+
+	cout << mom << endl;
+}
+
+
+
+
+// Python
+
+K, N, M = map(int, input().split())
+
+cost = K * N
+mom = cost - M
+if mom < 0:
+    mom = 0
+
+print(mom)
