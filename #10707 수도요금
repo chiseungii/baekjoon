@@ -1,0 +1,39 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int A, B, C, D, P; cin >> A >> B >> C >> D >> P;
+	int X, Y;
+
+	X = A * P;
+	
+	if (P > C)
+		Y = B + (P - C) * D;
+	else
+		Y = B;
+
+	if (X < Y) cout << X << endl;
+	else cout << Y << endl;
+}
+
+
+
+
+// Python
+
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+P = int(input())
+
+X = A * P
+
+if P > C:
+    Y = B + (P - C) * D
+else:
+    Y = B
+    
+print(min(X, Y))
