@@ -1,0 +1,63 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n; cin >> n;
+
+	int A, B;
+	if (n / 1000) {
+		A = n / 100;
+		B = n % 100;
+	}
+	else if (n / 100) {
+		if (n / 100 == 1) {
+			if (n / 10 == 10) {
+				A = 10;
+				B = n % 10;
+			}
+			else {
+				A = 1;
+				B = n % 100;
+			}
+		}
+		else {
+			A = n / 100;
+			B = n % 100;
+		}
+	}
+	else {
+		A = n / 10;
+		B = n % 10;
+	}
+
+	cout << A + B << endl;
+}
+
+
+
+
+// Python
+
+n = input()
+
+if len(n) == 4:
+    A = int(n) // 100
+    B = int(n) % 100
+elif len(n) == 3:
+    if n[0] == '1':
+        if n[1] == '0':
+            A = 10
+            B = int(n) % 10
+        else:
+            A = 1
+            B = int(n) % 100
+    else:
+        A = int(n) // 100
+        B = int(n) % 100
+else:
+    A = int(n) // 10
+    B = int(n) % 10
+    
+print(A + B)
