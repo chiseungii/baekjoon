@@ -1,0 +1,24 @@
+// Python
+
+A, B = map(int, input().split())
+
+if A > 0:
+    if B > 0:
+        print(A // B, A % B)
+    else:
+        print(-(A // abs(B)), A % abs(B))
+elif A < 0:
+    if B > 0:
+        if abs(A) % B:
+            res = -(abs(A) // B + 1)
+            print(res, A - B * res)
+        else:
+            print(A // B, 0)
+    else:
+        if abs(A) % abs(B):
+            res = abs(A) // abs(B) + 1
+            print(res, A - B * res)
+        else:
+            print(A // B, 0)
+else:
+    print(0, 0)
