@@ -1,0 +1,11 @@
+// Python
+
+B1 = input()
+B2 = input()
+
+B1 = '0b' + B1
+B1 = int(B1, base=2)
+B2 = '0b' + B2
+B2 = int(B2, base=2)
+
+print('{:#b}'.format(B1 * B2)[2:])
