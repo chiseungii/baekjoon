@@ -1,0 +1,30 @@
+// C++
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	double L; cin >> L;
+
+	double height = L * sqrt(3);
+	double width = L / 2;
+
+	cout << fixed;
+	cout.precision(9);
+	cout << height * width / 2 << endl;
+}
+
+
+
+
+// Python
+
+import math
+
+L = float(input())
+
+height = L * math.sqrt(3)
+width = L / 2
+
+print(height * width / 2)
