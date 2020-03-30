@@ -1,0 +1,26 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int tc; cin >> tc;
+	for (int i = 0; i < tc; i++) {
+		double cost; cin >> cost;
+	
+		cout << fixed;
+		cout.precision(2);
+		cout << '$' << cost * 0.8 << endl;
+	}
+}
+
+
+
+
+// Python
+
+tc = int(input())
+for i in range(tc):
+    cost = float(input())
+    result = cost * 0.8
+    print('$', "%0.2f" % result, sep='')
