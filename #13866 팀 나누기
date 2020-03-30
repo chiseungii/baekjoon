@@ -1,0 +1,29 @@
+// C++
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int A, B, C, D; cin >> A >> B >> C >> D;
+
+	int min = A, max = A;
+	if (B < min) min = B; if (B > max) max = B;
+	if (C < min) min = C; if (C > max) max = C;
+	if (D < min) min = D; if (D > max) max = D;
+
+	int a1 = A + B + C + D - max - min;
+	int a2 = max + min;
+
+	cout << abs(a1 - a2) << endl;
+}
+
+
+
+
+// Python
+
+A, B, C, D = map(int, input().split())
+a1 = A + B + C + D - max(A, B, C, D) - min(A, B, C, D)
+a2 = max(A, B, C, D) + min(A, B, C, D)
+print(abs(a1 - a2))
