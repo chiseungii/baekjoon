@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int S, T, D; cin >> S >> T >> D;
+
+	int time = D / (S * 2);
+	int mile = time * T;
+
+	cout << mile << endl;
+}
+
+
+
+
+// Python
+
+S, T, D = map(int, input().split())
+
+time = D // (S * 2)
+mile = time * T
+
+print(mile)
