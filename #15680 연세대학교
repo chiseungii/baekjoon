@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int N; cin >> N;
+
+	if (N)
+		cout << "Leading the Way to the Future\n";
+	else
+		cout << "YONSEI\n";
+}
+
+
+
+
+// Python
+
+N = int(input())
+
+if N:
+    print('Leading the Way to the Future')
+else:
+    print('YONSEI')
