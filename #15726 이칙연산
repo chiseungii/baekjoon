@@ -1,0 +1,26 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	double A, B, C; cin >> A >> B >> C;
+
+	double n1 = A * B / C;
+	double n2 = A / B * C;
+
+	if (n1 > n2) cout << (int)n1 << endl;
+	else cout << (int)n2 << endl;
+}
+
+
+
+
+// Python
+
+A, B, C = map(int, input().split())
+
+n1 = A * B / C
+n2 = A / B * C
+
+print(int(max(n1, n2)))
