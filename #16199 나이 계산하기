@@ -1,0 +1,58 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int birth_year, birth_month, birth_day;
+	int cur_year, cur_month, cur_day;
+	cin >> birth_year >> birth_month >> birth_day;
+	cin >> cur_year >> cur_month >> cur_day;
+
+	// 세는 나이
+	int age2 = cur_year - birth_year + 1;
+
+	// 연 나이
+	int age3 = cur_year - birth_year;
+
+	// 만 나이
+	int age1;
+	if (cur_month < birth_month)
+		age1 = cur_year - birth_year - 1;
+	else if (cur_month == birth_month) {
+		if (cur_day < birth_day)
+			age1 = cur_year - birth_year - 1;
+		else
+			age1 = cur_year - birth_year;
+	}
+	else
+		age1 = cur_year - birth_year;
+
+	cout << age1 << endl;
+	cout << age2 << endl;
+	cout << age3 << endl;
+}
+
+
+
+
+// Python
+
+birth_year, birth_month, birth_day = map(int, input().split())
+cur_year, cur_month, cur_day = map(int, input().split())
+
+age2 = cur_year - birth_year + 1
+
+age3 = cur_year - birth_year
+
+if cur_month < birth_month:
+    age1 = cur_year - birth_year - 1
+elif cur_month == birth_month:
+    if cur_day < birth_day:
+        age1 = cur_year - birth_year - 1
+    else:
+        age1 = cur_year - birth_year
+else:
+    age1 = cur_year - birth_year
+    
+print(age1, age2, age3)
