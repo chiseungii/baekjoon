@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long R, C, N; cin >> R >> C >> N;
+
+	long long height = (R % N) ? R / N + 1 : R / N;
+	long long width = (C % N) ? C / N + 1 : C / N;
+
+	cout << height * width << endl;
+}
+
+
+
+
+// Python
+
+R, C, N = map(int, input().split())
+
+height = R // N + 1 if R % N else R // N
+width = C // N + 1 if C % N else C // N
+
+print(height * width)
