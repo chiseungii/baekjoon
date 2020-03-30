@@ -1,0 +1,50 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	double N; cin >> N;
+
+	if (N == 0) cout << "divide by zero\n";
+	else {
+		double sum1 = 0, sum2 = 0;
+		for (int i = 0; i < N; i++) {
+			double a; cin >> a;
+			sum1 += a;
+			sum2 += (a / N);
+		}
+		sum1 /= N;
+
+		if (sum2 == 0) cout << "divide by zero\n";
+		else {
+			cout << fixed;
+			cout.precision(2);
+			cout << sum1 / sum2 << endl;
+		}
+	}
+}
+
+
+
+
+// Python
+
+N = int(input())
+
+if N == 0:
+    print("divide by zero")
+else:
+    sum1 = 0
+    sum2 = 0
+    a = list(map(int, input().split()))
+    for i in range(len(a)):
+        sum1 += a[i]
+        sum2 += (a[i] / N)
+    sum1 /= N
+
+    if sum2 == 0:
+        print("divide by zero")
+    else:
+        res = sum1 / sum2
+        print("%0.2f" % res)
