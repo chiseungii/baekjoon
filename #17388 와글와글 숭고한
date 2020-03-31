@@ -1,0 +1,37 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int S, K, H; cin >> S >> K >> H;
+
+	if (S + K + H >= 100) cout << "OK\n";
+	else {
+		int min = S;
+		if (K < min) min = K;
+		if (H < min) min = H;
+
+		if (min == S) cout << "Soongsil\n";
+		else if (min == K) cout << "Korea\n";
+		else cout << "Hanyang\n";
+	}
+}
+
+
+
+
+// Python
+
+S, K, H = map(int, input().split())
+
+if S + K + H >= 100:
+    print("OK")
+else:
+    min = min(S, K, H)
+    if min == S:
+        print("Soongsil")
+    elif min == K:
+        print("Korea")
+    else:
+        print("Hanyang")
