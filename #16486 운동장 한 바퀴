@@ -1,0 +1,25 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+#define PI 3.141592
+
+int main() {
+	int d1, d2; cin >> d1 >> d2;
+
+	cout << fixed;
+	cout.precision(6);
+	cout << 2 * d1 + 2 * d2 * PI << endl;
+}
+
+
+
+
+// Python
+
+PI = 3.141592
+
+d1 = int(input())
+d2 = int(input())
+print(2 * d1 + 2 * d2 * PI)
