@@ -1,0 +1,47 @@
+// C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n; cin >> n;
+
+	switch (n % 8) {
+	case 1:
+		cout << 1 << endl;
+		break;
+	case 2:
+	case 0:
+		cout << 2 << endl;
+		break;
+	case 3:
+	case 7:
+		cout << 3 << endl;
+		break;
+	case 4:
+	case 6:
+		cout << 4 << endl;
+		break;
+	case 5:
+		cout << 5 << endl;
+	}
+}
+
+
+
+
+// Python
+
+n = int(input())
+finger = n % 8
+
+if finger == 1:
+    print(1)
+elif finger == 2 or finger == 0:
+    print(2)
+elif finger == 3 or finger == 7:
+    print(3)
+elif finger == 4 or finger == 6:
+    print(4)
+else:
+    print(5)
