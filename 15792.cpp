@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int seat[1000][1000];
-
 int main() {
 	int A, B; cin >> A >> B;
 
