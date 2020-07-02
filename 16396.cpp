@@ -1,4 +1,3 @@
-// 선 그리기
 #include <iostream>
 using namespace std;
 
